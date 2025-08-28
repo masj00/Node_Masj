@@ -1,0 +1,18 @@
+Node Noter
+
+Det er et runtime for js som for det til at køre meget hurtigere.
+
+Hvad kan man gøre med JS udenfor browser:
+Tansionelt software /teams, discord,  (lavet i electron)
+Man kan også bruge javascript til backend (så man kan bruge alt i 1 sprog)
+Kan bygge servere bruge det til at kommunikere med databaser.
+
+man kan lave scripts (laver regnskab, lønninger osv.) konsolapplikationer, microservices.
+
+ikke til embedded systemer (systemer udenfor computeren aka en græslåmaskine)
+
+REPL (Read Evaluate Print Loop) ctrl+c 2 gange komme ud af REPL det er fx node, python jshell i terminalen
+
+
+sammenlign så brug 3 (=). fx 2 == "2" = true men 2 === "2" false fordi det er int og string
+ligesåvel med != er !==
