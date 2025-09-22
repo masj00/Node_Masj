@@ -24,3 +24,4 @@ const person = {
 };
 //Javascript objekt (er forskelligt fra et normalt json objekt)
 
+

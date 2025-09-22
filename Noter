@@ -16,3 +16,12 @@ REPL (Read Evaluate Print Loop) ctrl+c 2 gange komme ud af REPL det er fx node, 
 
 sammenlign så brug 3 (=). fx 2 == "2" = true men 2 === "2" false fordi det er int og string
 ligesåvel med != er !==
+
+
+
+locale downloads
+npm install --save-dev eslint prettier
+npx eslint --init
+
+npm install --save-dev prettier
+
