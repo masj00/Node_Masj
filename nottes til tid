@@ -1,0 +1,38 @@
+<div>
+  <!-- Input-felt hvor brugeren kan vælge en dato -->
+  <input id="dateInput" type="date">
+  <!-- Knappen kalder funktionen calc(), når man klikker på den -->
+  <button onclick="calc()">Beregn</button>
+</div>
+
+<!-- Her viser vi resultatet -->
+<div class="result" id="output"></div>
+
+<script>
+  // Funktion der udregner hvor mange dage der er gået siden den valgte dato
+  function calc(){
+    // Hent værdien (datoen) fra inputfeltet
+    const dateStr = document.getElementById("dateInput").value;
+
+    // Hvis der ikke er valgt en dato, så vis en advarsel og stop
+    if(!dateStr){
+      alert("Vælg en dato!");
+      return;
+    }
+
+    // Lav den valgte dato om til et Date-objekt
+    const chosen = new Date(dateStr);
+
+    // Lav et Date-objekt med dags dato og tid
+    const today = new Date();
+
+    // Beregn forskellen i millisekunder, lav det om til dage
+    const diffDays = Math.floor((today - chosen) / (1000*60*60*24));
+
+    // Lav en HTML-tekst, der viser resultatet
+    const html = `<p>Det er ${diffDays} dage siden ${chosen.toLocaleDateString("da-DK")}.</p>`;
+
+    // Indsæt resultatet i <div id="output">
+    document.getElementById("output").innerHTML = html;
+  }
+</script>

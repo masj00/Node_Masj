@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Hvor længe siden?</title>
+  <style>
+    body { font-family: sans-serif; display:flex; flex-direction:column;
+           align-items:center; justify-content:center; 
+           height:100vh; background:#111; color:#eee; }
+    h1 { margin-bottom:20px; }
+    input { padding:6px; font-size:1em; }
+    button { margin-left:6px; padding:6px 10px; }
+    .result { margin-top:20px; }
+  </style>
+</head>
+<body>
+  <h1>Hvor længe siden?</h1>
+  <div>
+    <input id="dateInput" type="date">
+    <button onclick="calc()">Beregn</button>
+  </div>
+  <div class="result" id="output"></div>
+
+  <script>
+    function calc(){
+      const dateStr = document.getElementById("dateInput").value;
+      if(!dateStr){
+        alert("Vælg en dato!");
+        return;
+      }
+      const chosen = new Date(dateStr);
+      const today = new Date();
+
+      const diffDays = Math.floor((today - chosen) / (1000*60*60*24));
+
+      const html = `<p>Det er ${diffDays} dage siden</p>`;
+      document.getElementById("output").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
