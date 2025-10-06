@@ -66,6 +66,23 @@ console.log(req.body);
 //til frontend
 res.send({data: req.body});
 });
+
+ //Set social engineer toolkit
+//leksion 6/7
+//VIGTIGT AT KUNNE FETCH // og har lavet en proxy server
+//CORS er kun i browsers
+//.then betyder at vi venter på response fra serveren(her er det fx https:/google.com)
+//Fetching in the client vs. fetching in the backend. TIL MANDATORY
+app.get("/proxy", (req, res) => {
+    //make a request to google and serve it to the client. //response.json konvertere streamen af info(kan give fejl fordi den parser < og <!doctype altså som html og giver fejl)
+    //så kan man lave response.text der giver et svar man kan bruge
+    fetch("https://www.google.com/")
+    .then(response => response.text())
+    .then(result => res.send(result));
+});
+
+
+
 //express nægtede at have body parser fordi de har minimalistisk framework //men de er der nu
 //VIGTIGT EKSAMEN ik bodyparse i express den er på linje 15
 

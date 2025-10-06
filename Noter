@@ -22,6 +22,10 @@ ligesåvel med != er !==
 locale downloads
 npm install --save-dev eslint prettier
 npx eslint --init
+npm install --save-dev nodemon
+npm install --save-dev cross-env
+til env variabler 
+
 
 npm install --save-dev prettier
 
