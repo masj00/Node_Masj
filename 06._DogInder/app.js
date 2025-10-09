@@ -3,6 +3,8 @@ import path from 'path';
 
 const app = express();
 
+
+//sender ikke gør det bare tilgængeligt at gøre / altså når vi ville hente fra matches.html fra matches.js
 app.use(express.static("public"));
 
 console.log(process.env.PORT); // kan ændre en miljøvariabler eksistere i node
@@ -10,17 +12,33 @@ console.log(process.env.PORT); // kan ændre en miljøvariabler eksistere i node
 //devDependencies
 
 //======PAGES======
+
+
+import { frontpagePage, matchesPage } from './util/pagesUtil.js';
+
+    //behøver ikke da vi lavede frontpage ovenover
+    //res.sendFile(path.resolve('public/pages/frontend/index.html'));
+    //man sender bare hele html filen ind som string
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve('public/pages/frontend/index.html'));
+    res.send(frontpagePage);
 });
 
 app.get("/matches", (req, res) => {
-    res.sendFile(path.resolve('public//pages/matches/matches.html'));
+    res.send(matchesPage);
 });
+
+
 
 //=======API==========
 //task create a /api/matches route that returns 5 dog objects contain urls
 
+//MULIG FEJLLLL!!!!!!! (skal være med lille?)
+import { getMatches } from './util/matchesutil.js';
+
+app.get("/api/matches", async (req, res) =>  {
+    const matches = await getMatches();
+    res.send({ data: matches });
+});
 
 //Leksion 6/7
 //arbejder også i package.json under scripts
