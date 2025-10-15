@@ -32,3 +32,5 @@ npm install --save-dev prettier
 
 HAMMER TIL AT SWIPE
 
+Nodemon ser den de filer der skal ændres i for at køre igen
+nodemon --ext "filtyperne" app.js
