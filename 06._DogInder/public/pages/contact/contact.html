@@ -1,0 +1,24 @@
+<h1>Contact</h1>
+
+
+<form action="/api/contact" method="POST">
+    <fieldset>    
+
+        <label>Name</label>
+        <!-- Default input type er text-->
+         <!-- name er key-->
+        <input type="text" name="name" placeholder="Type your name..." required>
+
+        <label>Email</label>
+        <!-- man kan lave value="test@email.com" når man tester-->
+        <input id="email" name="email" type="email" placeholder="Type your email..." required>
+
+        <label>Message</label>
+        <!-- man kan også gøre dette i en css fil (til eksamen skal rows og cols være der måske undgå det så du kan gøre det live)-->
+        <textarea id="message" name="message" rows="15" cols="60" placeholder="Type your message..."></textarea>
+
+        <button type="submit">Send</button>
+    </fieldset>
+
+</form>
+

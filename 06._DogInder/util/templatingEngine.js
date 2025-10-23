@@ -10,7 +10,8 @@ import fs from 'fs';
 //den er mere dynamisk
 export function constructPage(pageContent, options = {}) {
     //|| løser oppe i toppen altså oppe ved tabbene i browser
-    return header.replace('$$TAB_TITLE$$', options.tabTitle || "DogInder")
+    return header
+    .replace('$$TAB_TITLE$$', options.tabTitle || "DogInder")
     .replace('$$CSS_LINKS$$', options.cssLinks || '')
     + pageContent 
     + footer;

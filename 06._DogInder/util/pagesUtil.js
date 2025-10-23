@@ -1,4 +1,4 @@
-import {constructPage, readPage} from "./templatingEngine"
+import {constructPage, readPage} from "./templatingEngine.js"
 
 //vi læser filen før vi går videre i programmet (altså readFileSync) (læser den ind som en string)
 //den lægger her pga. den skal kun læses når projektet skal deployes(nu har vi den i memory)
@@ -16,6 +16,11 @@ export const frontpagePage = constructPage(frontpage,{
 const matches = readPage("./public/pages/matches/matches.html");
 export const matchesPage = constructPage(matches, {
     cssLinks: `<link rel="stylesheet" href="/pages/matches/matches.css">`
+});
+
+const contact = readPage("./public/pages/contact/contact.html");
+export const contactPage = constructPage(contact, {
+    tabTitle: "DogInder  Contact"
 });
 
 

@@ -11,9 +11,20 @@ console.log(process.env.PORT); // kan ændre en miljøvariabler eksistere i node
 //scripts nogle duer kun med mac/bash så man skal have cross-env npm fx (npm install --save-dev cross-env) /den laver en
 //devDependencies
 
+//LEKSION 8 Hvordan man rykker pages og api ud i andre filer så app.js er kortere
+//POSTMAND ER GOD TIL DEBUGGING AF API´ER
+app.use(express.urlencoded()); //middleware der parser urlencoded body (skal være før vores routes)
+//vi laver en mappe routers og laver en fil xxxRouter.js
+//hvorfor kan vi kalde den pagesRouter og ikke router = fordi vi eksporterer den som default router i router.js filen
+import matchesRouter from './routers/matchesRouter.js';
+app.use(matchesRouter);
+import pagesRouter from './routers/pagesRouter.js';
+app.use(pagesRouter);
+import contactRouter from './routers/contactRouter.js';
+app.use(contactRouter);
+
+/* ALT DETTE KAN SLETTES
 //======PAGES======
-
-
 import { frontpagePage, matchesPage } from './util/pagesUtil.js';
 
     //behøver ikke da vi lavede frontpage ovenover
@@ -27,26 +38,27 @@ app.get("/matches", (req, res) => {
     res.send(matchesPage);
 });
 
-
-
 //=======API==========
 //task create a /api/matches route that returns 5 dog objects contain urls
 
 //MULIG FEJLLLL!!!!!!! (skal være med lille?)
+
 import { getMatches } from './util/matchesutil.js';
 
 app.get("/api/matches", async (req, res) =>  {
     const matches = await getMatches();
     res.send({ data: matches });
 });
+*/
 
+/*
 //Leksion 6/7
 //arbejder også i package.json under scripts
-
-
+//OR LOGICAL OPERATOR
 // false, null, undefined, NaN, 0, "". = faulty values
 const w = false || null || 5 || NaN;
 console.log(w)
+*/
 
 //MANDATORY Can define and run scripts with NPM og Know how to define environment variables natively in Node.js (natively = not using any libraries).
 const PORT = Number(process.env.PORT) || 8080; //kan ændre dette til en miljøvariable (i stedet for 8080)

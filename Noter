@@ -22,7 +22,11 @@ ligesåvel med != er !==
 locale downloads
 npm install --save-dev eslint prettier
 npx eslint --init
-npm install --save-dev nodemon
+
+npm install --save-dev nodemon 
+/ for at køre: 
+npx nodemon app.js
+
 npm install --save-dev cross-env
 til env variabler 
 
@@ -34,3 +38,13 @@ HAMMER TIL AT SWIPE
 
 Nodemon ser den de filer der skal ændres i for at køre igen
 nodemon --ext "filtyperne" app.js
+
+
+git
+echo "# mandatory1" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/masj00/mandatory1.git
+git push -u origin main
