@@ -1,7 +1,9 @@
 import { Router } from 'express';
 
+
 //instanciere
 const router = Router();
+
 
 
 //middleware kan tilgå req, res og next

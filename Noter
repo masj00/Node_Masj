@@ -59,3 +59,19 @@ npm run dev
 
 Tree
 DOM HTML tree
+
+
+Basic rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset. Plays nice with express-slow-down and ratelimit-header-parser.
+https://www.npmjs.com/package/express-rate-limit
+npm i express-rate-limit
+
+https://www.npmjs.com/package/express-session
+npm i express-session
+
+npm i helmet
+
+
+konfigurer den så tidligt som muligt (første linje)
+npm i dotenv
+
+npm i bcryptjs

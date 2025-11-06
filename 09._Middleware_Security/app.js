@@ -1,5 +1,25 @@
+import 'dotenv/config';
+console.log("SESSION_SECRET:", process.env.SESSION_SECRET);
+
 import express from 'express';
 const app = express();
+
+//------------------------
+//session middleware godt at have øverst så det er tilgængeligt for alle routes
+//id baseret så hver client får sin egen session
+import session  from 'express-session';
+
+app.use(session({
+    //todo Change secret
+  secret: process.env.SESSION_SECRET, 
+  resave: false, //don't save session if unmodified
+  saveUninitialized: true, //don't create session until something stored //only create session if user logs in or something
+  cookie: { secure: false } //should be true in production with https
+}));
+//------------------------
+
+import helmet from 'helmet';
+app.use(helmet()); //sætter en masse headers der gør applikationen mere sikker
 
 //----------------------------
 //rate limiting middleware
@@ -30,6 +50,8 @@ app.use("/auth", authLimiter);
 
 
 //sæt router op
+import sessionRouter from './routers/sessionRouter.js';
+app.use(sessionRouter);
 import authRouter from './routers/authRouter.js';
 app.use(authRouter);
 //iplogger skal ikke køre på auth
