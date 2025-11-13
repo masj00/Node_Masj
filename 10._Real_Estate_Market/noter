@@ -1,0 +1,18 @@
+
+// 1. Run 'npm init -y' to create a package.json file with default values.
+// 2. Modify the "type" field to "module" to enable ES module support.
+// 3. Add "express" as a dependency by running 'npm install'
+
+Følg Rest
+
+
+// til sessions
+i din .env og så skal den in i app.js session
+> require('crypto').randomBytes(23).toString('hex')
+'45ef8dcd9c85d4ae60c63afeb23fc25a581ac2fa8638c0'
+> 
+
+ npm create vite@latest   
+
+ lav titel i html
+ public/billede //ændre favicon
