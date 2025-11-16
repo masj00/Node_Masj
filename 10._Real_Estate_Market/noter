@@ -11,8 +11,11 @@ i din .env og så skal den in i app.js session
 > require('crypto').randomBytes(23).toString('hex')
 '45ef8dcd9c85d4ae60c63afeb23fc25a581ac2fa8638c0'
 > 
-
+npm install dotenv
  npm create vite@latest   
 
  lav titel i html
  public/billede //ændre favicon
+
+ for at køre svelte skal du 
+ npm run dev

@@ -28,7 +28,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } //skal ændres lokalt køre vi uden https
-}))
+}));
 
 
 import realEstateAgentRouter from './routers/realEstateAgentsRouter.js'; 

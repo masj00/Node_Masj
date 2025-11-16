@@ -1,7 +1,10 @@
 <script>
+    import { BASE_URL } from "../../store/generalStore";
     let realEstateAgents;
 
-    fetch("http://localhost:8080/realestateagents")
+    //console.log(import.meta.env.VITE_BASE_URL); //godt at bruge så med ved hvor og hvad baseurl er 
+
+    fetch( BASE_URL + "/realestateagents")
     .then((response) => response.json())
     .then((result) => {
         realEstateAgents = result.data;
