@@ -1,17 +1,17 @@
 import db from './connection.js'
 
-//db.exec run DDL and DCL against the database
 
-
+//db.all for SELECT
+//db.run for INSERT, UPDATE, DELETE 
+//db.exec run DDL and DCL against the database (tillader at køre flere statements ad gangen)
 
 //Yargs npm library kan også bruges til at parse kommando linje argumenter
 
 //nu skal man skrive delete i kommando linjen for at slette tabellerne
 const deleteMode = process.argv.includes('delete');
+//Kig i scripts under package.json for at se hvordan det bruges
 
-//console.log(deleteMode);
-
-if (!deleteMode) {
+if (deleteMode) {
 //Altid slet det med foreign keys først
 db.exec(`DROP TABLE IF EXISTS exercises;`);
 db.exec(`DROP TABLE IF EXISTS users;`);
@@ -41,3 +41,12 @@ CREATE TABLE IF NOT EXISTS exercises (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 `);
+
+
+//Seeding
+//DML
+if(deleteMode){
+db.run(`INSERT INTO users (username, role) VALUES ('anders', 'STAFF');`);
+db.run(`INSERT INTO exercises (name, difficulty, user_id) VALUES ('squats', 7, 1); `);
+db.run(`INSERT INTO exercises (name, user_id) VALUES ('burpees', 1); `);
+};
