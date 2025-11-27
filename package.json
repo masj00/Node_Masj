@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "nodemon": "^3.1.10",
+    "nodemon": "^3.1.11",
     "svelte-routing": "^2.13.0"
   }
 }

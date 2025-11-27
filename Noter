@@ -75,3 +75,13 @@ konfigurer den så tidligt som muligt (første linje)
 npm i dotenv
 
 npm i bcryptjs
+
+
+
+mongo db
+åbne mongodb
+vær i bin folder
+./mongod --dbpath ./data/db/
+
+
+kør mongosh / shell for at connecte til database du åbnede ovenover
