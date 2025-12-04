@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+</head>
+<body>
+    <h2>Colors</h2>
+    
+    <input type="color" id="color-picker">
+    <button onclick="submitColor()">Submit Color</button>
+
+<!-- Indlæs Socket.IO klientbiblioteket søg på localhost8080/socket.io/socket.io.js-->
+<script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Opret forbindelse til serveren
+        const socket = io();
+        
+        const colorInput = document.getElementById('color-picker');
+
+        function submitColor() {
+
+            const color = colorInput.value;
+            console.log("Selected color:", color);
+
+            // Send farven til serveren
+            socket.emit('client-sends-color', { color });
+        };
+
+        socket.on("server-sends-color", (data) => {
+            console.log(data.color);
+
+            document.body.style.backgroundColor = data.color;
+        });
+    </script>
+</body>
+</html>

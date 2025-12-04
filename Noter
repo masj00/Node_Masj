@@ -85,3 +85,6 @@ vær i bin folder
 
 
 kør mongosh / shell for at connecte til database du åbnede ovenover
+
+use, db, db.createCollection
+
