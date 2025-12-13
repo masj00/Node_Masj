@@ -88,3 +88,12 @@ kør mongosh / shell for at connecte til database du åbnede ovenover
 
 use, db, db.createCollection
 
+
+sockets bruges til chat / meget det samme som fetch,
+man kan også sende data fra server til client uden prompt (sockets kan mere end fetch kan)
+Man kan måske lave en widget så man kan kommunikere med admin, ellers lave perma darkmode via broadcast
+en friendlist til at se om 1 person er online via sockets self / vise hvem der er online
+
+Kort sagt emit og on
+emit = sender data
+on = lytter (callback function)
